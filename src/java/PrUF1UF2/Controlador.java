@@ -59,7 +59,7 @@ public class Controlador extends HttpServlet {
                     out.println(output);
                     out.close();
                 } catch (IOException e) {
-                    url = "error.jsp";
+                    url = "inCorrect.jsp";
                 }
 
             } else {
