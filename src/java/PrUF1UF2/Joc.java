@@ -1,4 +1,3 @@
-
 package PrUF1UF2;
 
 import java.io.IOException;
@@ -12,11 +11,11 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/joc"})
 /**
- *Controlador que s'encarrega de la lògica del joc
- * 
+ * Controlador que s'encarrega de la lògica del joc
+ *
  * @author sergi
  * @version 1.0
- * 
+ *
  */
 public class Joc extends HttpServlet {
 
@@ -32,12 +31,24 @@ public class Joc extends HttpServlet {
         } else {
             if (id_anterior.equals(id)) {
                 System.out.println("Tens una parella " + id + ", " + id_anterior);
-                Integer puntjoc = (Integer) request.getAttribute("puntjoc");
-                if(puntjoc == null){
-                   request.getSession().setAttribute("puntjoc", 1);
-                }else{
+                Integer puntjoc = (Integer) request.getSession().getAttribute("puntjoc");
+                /*if(puntjoc == 2){
+                 System.out.println("joc final");
+                 request.getSession().removeAttribute("punjoc");
+                 response.sendRedirect("jocfinal.jsp");
+                 }*/
+                if (puntjoc == null) {
+                    request.getSession().setAttribute("puntjoc", 1);
+                } else {
                     puntjoc++;
                     request.getSession().setAttribute("puntjoc", puntjoc);
+                    if (puntjoc == 2) {
+                        System.out.println("joc final");
+                        request.getSession().removeAttribute("punjoc");
+                        url ="jocfinal.jsp";
+                        RequestDispatcher rd = request.getRequestDispatcher(url);
+                        rd.forward(request, response);
+                    }
                 }
             } else {
                 System.out.println("No es una parella " + id + ", " + id_anterior);
@@ -50,7 +61,7 @@ public class Joc extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
 }
