@@ -2,7 +2,7 @@
     Document   : registre
     Created on : 16/01/2015, 16:46:42
     Author     : sergi
-    Description: Pagina de registre i login una vegada fet el primer registre
+    Description: Pagina de registre i login una vegada fet el primer registre incorrectament
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -87,7 +87,7 @@
                 <input type="submit" name="reg" value="Registre" class="btn"/>
                 <input type="submit" name="log" value="Login" class="btn"/>
             </form>   
-            <h1 class="incorrecte">Introdueix una adreça de correu</h1>
+            <h1 class="incorrecte">Introdueix una adreça de correu i una contrasenya correctes</h1>
         </div>
     </body>
 </html>

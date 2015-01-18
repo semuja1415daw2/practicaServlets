@@ -20,14 +20,14 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/controlador"})
 /**
- *Controlador principal, s'encarrega de controlar el registre i printar la taula del joc
- * 
+ * Controlador principal, s'encarrega de controlar el registre i printar la
+ * taula del joc
+ *
  * @author sergi
  * @version 1.0
- * 
+ *
  */
 public class Controlador extends HttpServlet {
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -59,12 +59,12 @@ public class Controlador extends HttpServlet {
                     out.println(output);
                     out.close();
                 } catch (IOException e) {
-                    url = "inCorrect.jsp";
+                    String message = "El accès no està permès";
+                    response.sendError(HttpServletResponse.SC_FORBIDDEN, message);
                 }
 
             } else {
-                String message = "El accès no està permès";
-                response.sendError(HttpServletResponse.SC_FORBIDDEN, message);
+                url = "inCorrect.jsp";
             }
         } else if (request.getParameter("log") != null) {
 
