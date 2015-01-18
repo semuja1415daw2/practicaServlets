@@ -1,8 +1,8 @@
 <%-- 
-    Document   : error
+    Document   : JocFinal
     Created on : 16/01/2015, 19:49:21
     Author     : sergi
-    Description: Pàgina d'error en cas d'un login incorrecte
+    Description: Pàgina que t'informa que has finalitzat el joc
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
