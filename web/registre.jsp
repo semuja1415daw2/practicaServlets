@@ -82,7 +82,8 @@
                 <input type="password" name="password" class="form-control" /> <br/>
                 <input type="submit" name="reg" value="Registre" class="btn"/>
                 <input type="submit" name="log" value="Login" class="btn"/>
-            </form>   
+            </form>
+            <img src="imatges/joc.png" >
         </div>
     </body>
 </html>

@@ -39,7 +39,6 @@ public class Joc extends HttpServlet {
                     request.getSession().setAttribute("puntjoc", puntjoc);
                     if (puntjoc == 2) {
                         System.out.println("joc final");
-                        request.getSession().removeAttribute("punjoc");
                         url ="jocfinal.jsp";
                         RequestDispatcher rd = request.getRequestDispatcher(url);
                         rd.forward(request, response);
