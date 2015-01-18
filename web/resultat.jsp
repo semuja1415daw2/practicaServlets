@@ -2,6 +2,7 @@
     Document   : resultat
     Created on : 16/01/2015, 16:50:06
     Author     : sergi
+    Description: Pàgina del joc
 --%>
 
 <%@page import="java.util.List"%>

@@ -2,6 +2,7 @@
     Document   : registre
     Created on : 16/01/2015, 16:46:42
     Author     : sergi
+    Description: Pagina de registre i login una vegada fet el primer registre
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

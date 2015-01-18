@@ -2,6 +2,7 @@
     Document   : error
     Created on : 16/01/2015, 19:49:21
     Author     : sergi
+    Description: Pàgina d'error en cas d'un login incorrecte
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
