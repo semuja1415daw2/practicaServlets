@@ -73,9 +73,8 @@
     </head>
     <body>
         <h1 class="centre">Troba les parelles!</h1>
-        <a class="centre"> El joc tracta d'un repte de trobar parelles de gures o
-            imatges. El joc funciona per nivells, sent el primer nivell una matriu de 2x2 (i per tant 2 parelles de
-            gures), fins 5x5 (5 parelles). </a><br>
+        <a class="centre"> El joc tracta d'un repte de trobar parelles de 
+            imatges. És un sencill joc de 2 x 2 que s'executa a nivell servidor</a><br>
         <a class="centre">El joc és multijugador. Cada jugador es registra amb un nom i contrasenya:</a>
         <div class="centre">
             <form method="POST" action="controlador">
