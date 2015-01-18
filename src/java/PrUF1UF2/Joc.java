@@ -32,11 +32,6 @@ public class Joc extends HttpServlet {
             if (id_anterior.equals(id)) {
                 System.out.println("Tens una parella " + id + ", " + id_anterior);
                 Integer puntjoc = (Integer) request.getSession().getAttribute("puntjoc");
-                /*if(puntjoc == 2){
-                 System.out.println("joc final");
-                 request.getSession().removeAttribute("punjoc");
-                 response.sendRedirect("jocfinal.jsp");
-                 }*/
                 if (puntjoc == null) {
                     request.getSession().setAttribute("puntjoc", 1);
                 } else {
