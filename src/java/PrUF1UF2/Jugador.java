@@ -6,41 +6,42 @@ package PrUF1UF2;
  * and open the template in the editor.
  */
 /**
- *
+ *Classe jugador per introduir el anom dels jugadors i també els rows de la quadricula amb el joc
+ * 
  * @author sergi
+ * @version 1.0
+ * 
  */
-import java.util.Date;
+import java.util.ArrayList;
 
 public class Jugador {
-    private String nom;
-    private Date dataEntrada;
+    private String jugador;
 
     public Jugador() {
     }
 
-    public Jugador(String nom, Date data) {
-        this.nom = nom;
-        this.dataEntrada=data;
+    public Jugador(String jugador) {
+        this.jugador = jugador;
     }
 
     public String getNom() {
-        return nom;
+        return jugador;
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        this.jugador = jugador;
     }
 
-    public Date getDataEntrada() {
-        return dataEntrada;
-    }
+    
+    private ArrayList<String> taulaJoc = new ArrayList<String>();
+    
 
-    public void setDataEntrada(Date dataEntrada) {
-        this.dataEntrada = dataEntrada;
+    public ArrayList<String> getTaulaJoc() {
+        return taulaJoc;
     }
 
     @Override
     public String toString() {
-        return "Usuari:" + nom;
+        return "usuari:" + jugador;
     }
 }

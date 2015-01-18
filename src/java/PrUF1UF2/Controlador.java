@@ -1,19 +1,5 @@
 package PrUF1UF2;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author sergi
- */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,8 +10,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,12 +19,27 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/controlador"})
+/**
+ *Controlador principal, s'encarrega de controlar el registre i printar la taula del joc
+ * 
+ * @author sergi
+ * @version 1.0
+ * 
+ */
 public class Controlador extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String url = "joc.jsp";
+        Jugador jugador = new Jugador(request.getParameter("nom"));
+        jugador.getTaulaJoc().add("1");
+        jugador.getTaulaJoc().add("2");
+        jugador.getTaulaJoc().add("2");
+        jugador.getTaulaJoc().add("1");
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
     }
 
     @Override
@@ -51,7 +50,7 @@ public class Controlador extends HttpServlet {
 
         if (request.getParameter("reg") != null) {
             if ((request.getParameter("nom").contains("@")) && (request.getParameter("password").length() >= 6)) {
-                url = "/joc";
+                url = "regCorrect.jsp";
 
                 String output = request.getParameter("nom") + ";" + request.getParameter("password");
 
@@ -64,7 +63,8 @@ public class Controlador extends HttpServlet {
                 }
 
             } else {
-                //response.set
+                String message = "El accès no està permès";
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, message);
             }
         } else if (request.getParameter("log") != null) {
 
@@ -81,13 +81,15 @@ public class Controlador extends HttpServlet {
 
                         if (request.getParameter("nom").equals(usrpasw[0]) && request.getParameter("password").equals(usrpasw[1])) {
 
-                            Jugador jugador = new Jugador(request.getParameter("nom"), new Date());
-                            
-
+                            Jugador jugador = new Jugador(request.getParameter("nom"));
+                            jugador.getTaulaJoc().add("1");
+                            jugador.getTaulaJoc().add("2");
+                            jugador.getTaulaJoc().add("2");
+                            jugador.getTaulaJoc().add("1");
                             sessio.setAttribute("nom", jugador);
-                            url = "/joc";
+                            url = "resultat.jsp";
                             System.out.println("Login correcte");
-                                                        break;
+                            break;
 
                         }
 

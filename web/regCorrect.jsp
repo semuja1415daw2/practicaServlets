@@ -67,6 +67,9 @@
                 color: #333333;
                 text-decoration: none;
             }
+            .correcte{
+                color:green;
+            }
             
         </style>
     </head>
@@ -83,6 +86,7 @@
                 <input type="submit" name="reg" value="Registre" class="btn"/>
                 <input type="submit" name="log" value="Login" class="btn"/>
             </form>   
+            <h1 class="correcte">Registre realitzat correctament</h1>
         </div>
     </body>
 </html>
