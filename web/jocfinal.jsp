@@ -6,12 +6,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="PrUF1UF2.Jugador"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Joc Finalitzat</title>
         <style>
             body{
                 width: 500px;
@@ -26,7 +27,8 @@
         </style>
     </head>
     <body>
-        <h1>Felicitats has completat el joc!</h1>
+        <h1>Felicitats ${nom} has completat el joc!</h1>
+        <h1>Has fet <%=session.getAttribute("puntjoc")%> punts</h1>
         <img src="imatges/game-over.png">
     </body>
 </html>

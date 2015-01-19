@@ -88,6 +88,7 @@
                 <input type="submit" name="log" value="Login" class="btn"/>
             </form>   
             <h1 class="incorrecte">Introdueix una adreça de correu i una contrasenya correctes</h1>
+            <h3 class="incorrecte">La contrasenya ha de tenir com a mínim 6 caràcters</h3>
         </div>
     </body>
 </html>
